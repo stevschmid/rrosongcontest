@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>rro-Song Contest</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+
+      /* background-color: #9F33C2; */
+      /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%239F33C2'/%3E%3Cstop offset='1' stop-color='%2302027A'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%23902dbd'/%3E%3Cstop offset='1' stop-color='%23020277'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%238127b8'/%3E%3Cstop offset='1' stop-color='%23020275'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%237121b3'/%3E%3Cstop offset='1' stop-color='%23020172'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23621cad'/%3E%3Cstop offset='1' stop-color='%23020170'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%235217a7'/%3E%3Cstop offset='1' stop-color='%2302016d'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%234313a0'/%3E%3Cstop offset='1' stop-color='%2302016a'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%23350e9a'/%3E%3Cstop offset='1' stop-color='%23020168'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23270b92'/%3E%3Cstop offset='1' stop-color='%23020065'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%2319078b'/%3E%3Cstop offset='1' stop-color='%23020062'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%230d0582'/%3E%3Cstop offset='1' stop-color='%23020060'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%2302027A'/%3E%3Cstop offset='1' stop-color='%2302005D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg %3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E"); */
+      /* background-attachment: fixed; */
+      /* background-size: cover; */
+      background-color: #151425;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      text-align: center;
+      font-size: 5rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    #dashboard {
+      padding-top: 450px;
+      display: flex;
+    }
+    #scoreboard {
+      padding: 1rem;
+      border-radius: 4px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      width: 800px;
+    }
+    .contestant {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+      position: relative;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    .contestant > [data-contestant] {
+      flex: 1;
+      background: #3d31dd;
+      color: white;
+    }
+    .rank {
+      background: #fd0184;
+      color: white;
+      width: 50px;
+      text-align: center;
+      font-size: 2rem;
+      margin-right: 10px;
+    }
+    .contestant > * {
+      padding: 10px;
+    }
+    .score {
+      text-align: center;
+      background: white;
+      color: black;
+      width: 50px;
+    }
+    .score-delta {
+      font-weight: bold;
+      width: 50px;
+      text-align: center;
+      color: yellow;
+      text-shadow: 0px 0px 15px rgb(177 176 23);
+    }
+    #control-panel {
+      display: flex;
+      flex-direction: column;
+      background: transparent;
+      border-radius: 4px;
+      align-items: center;
+      width: 500px;
+    }
+    #round-info {
+      font-size: 4rem;
+      font-weight: bold;
+      color: yellow;
+      text-shadow: 0px 0px 25px rgb(177 176 23);
+      margin-top: 10px;
+    }
+    #voter-info {
+      font-size: 2rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    #current-round {
+      margin-bottom: 1rem;
+    }
+    /* Style for the vote round image */
+    #round-image {
+      display: block;
+      box-shadow: 0 0 10px rgb(118 45 102);
+      border-radius: 10px;
+      margin: 0 1em;
+      height: 300px;
+      object-fit: contain;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0.25rem 0.5rem 0;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    /* Style for the score matrix editor */
+    #edit-scores {
+      margin-top: 1rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+    #score-matrix {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+    #score-matrix th,
+    #score-matrix td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    #score-matrix select {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div style="width: 100%; position: absolute; text-align: center; z-index: -1">
+    <img src="img/logo.png" alt="Logo" style="width: 800px; margin-top: -50px; transform: translateZ(0); image-rendering: -webkit-optimize-contrast;"/>
+  </div>
+
+  <div id="dashboard">
+    <!-- Scoreboard Panel -->
+    <ul id="scoreboard">
+      <li class="contestant" data-index="0">
+        <span class="rank">1</span>
+        <span data-contestant=0>A</span>
+        <span class="score">0</span>
+        <span class="score-delta"></span>
+      </li>
+      <li class="contestant" data-index="1">
+        <span class="rank">2</span>
+        <span data-contestant=1>B</span>
+        <span class="score">0</span>
+        <span class="score-delta"></span>
+      </li>
+      <li class="contestant" data-index="2">
+        <span class="rank">3</span>
+        <span data-contestant=2>C</span>
+        <span class="score">0</span>
+        <span class="score-delta"></span>
+      </li>
+      <li class="contestant" data-index="3">
+        <span class="rank">4</span>
+        <span data-contestant=3>D</span>
+        <span class="score">0</span>
+        <span class="score-delta"></span>
+      </li>
+      <li class="contestant" data-index="4">
+        <span class="rank">5</span>
+        <span data-contestant=4>E</span>
+        <span class="score">0</span>
+        <span class="score-delta"></span>
+      </li>
+    </ul>
+
+    <!-- Control Panel -->
+    <div id="control-panel">
+      <div id="current-round">
+        <div id="voter-info"></div>
+      </div>
+
+      <button id="advance-btn" style="background: none; border: none; cursor: pointer;">
+        <img id="round-image" src="img/voter0.png" alt="Vote Round Image">
+      </button>
+
+      <span id="round-info"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    // Constants and default matrix definitions.
+    const voters = ["Online Voting", "Z'Hansrüedi", "Salome", "Daniel Blatter", "Debby"];
+    const basePoints = [3, 5, 8, 10, 12];
+    const contestants = ["Madstone", "Born in Dorian", "Mainstreet 47", "Perplex", "The Getwings"];
+
+    // Default matrix (rows: contestants, columns: vote rounds).
+    // For each vote round (column), the default ordering is: A gets 12, B gets 10, C gets 8, D gets 5, E gets 3.
+    const defaultMatrix = [
+      [12, 12, 12, 12, 12],  // Contestant A
+      [10, 10, 10, 10, 10],  // Contestant B
+      [8,  8,  8,  8,  8],   // Contestant C
+      [5,  5,  5,  5,  5],   // Contestant D
+      [3,  3,  3,  3,  3]    // Contestant E
+    ];
+
+    // Global state variables.
+    let scoreMatrix = loadScoreMatrix();
+    let contestantScores = new Array(contestants.length).fill(0);
+    let currentVoter = 0;        // Represents the current vote round (column index).
+    let currentPointIndex = 0;   // Index into basePoints (reveals in ascending order).
+    let isAnimating = false;     // Prevents multiple animations at once.
+
+    // DOM elements.
+    const roundInfoEl = document.getElementById("round-info");
+    const voterInfoEl = document.getElementById("voter-info");
+    const advanceBtn = document.getElementById("advance-btn");
+    const editScoresBtn = document.getElementById("edit-scores-btn");
+    const editScoresEl = document.getElementById("edit-scores");
+    const saveScoresBtn = document.getElementById("save-scores-btn");
+    const cancelEditBtn = document.getElementById("cancel-edit-btn");
+    const scoreMatrixBody = document.querySelector("#score-matrix tbody");
+    const scoreboardEl = document.getElementById("scoreboard");
+    const voterImageEl = document.getElementById("round-image");
+    const controlPanelEl = document.getElementById("control-panel");
+
+    // Update the current vote round display when the page loads.
+    updateRoundDisplay();
+
+    // -------------------------
+    // Persistence functions
+    function loadScoreMatrix() {
+      const stored = localStorage.getItem('scoreMatrix');
+      if (stored) {
+        try {
+          const matrix = JSON.parse(stored);
+          if (Array.isArray(matrix) && matrix.length === contestants.length &&
+              matrix.every(row => Array.isArray(row) && row.length === voters.length)) {
+            return matrix;
+          }
+        } catch (e) {
+          console.error("Error parsing stored score matrix", e);
+        }
+      }
+      return defaultMatrix;
+    }
+
+    function saveScoreMatrix() {
+      localStorage.setItem('scoreMatrix', JSON.stringify(scoreMatrix));
+    }
+
+    // -------------------------
+    // Update display of the current vote round.
+    function updateRoundDisplay() {
+      if (currentVoter >= voters.length) {
+        advanceBtn.disabled = true;
+        controlPanelEl.style.display = "none";
+      } else {
+        const voterName = voters[currentVoter];
+        const base = basePoints[currentPointIndex];
+        const multiplier = (currentVoter === 0) ? 4 : 1;
+        const effective = base * multiplier;
+        roundInfoEl.textContent = `${effective} Punkte`;
+        voterInfoEl.textContent = `${voterName} (${5 - currentPointIndex}. Platz)`;
+        voterImageEl.src = `img/voter${currentVoter}.png`;
+      }
+    }
+
+    // -------------------------
+    // Animate numeric value changes on an element.
+    function animateValue(element, start, end, duration, callback) {
+      let startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        const value = Math.floor(start + (end - start) * Math.min(progress / duration, 1));
+        element.textContent = value;
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        } else {
+          element.textContent = end;
+          if (callback) callback();
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    // -------------------------
+    // FLIP animation for reordering the scoreboard smoothly.
+    function flipReorderScores() {
+      const items = Array.from(scoreboardEl.querySelectorAll(".contestant"));
+      const initialPositions = new Map();
+      items.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        initialPositions.set(item, rect.top);
+      });
+      // Sort items by descending score.
+      items.sort((a, b) => {
+        const scoreA = parseInt(a.querySelector(".score").textContent);
+        const scoreB = parseInt(b.querySelector(".score").textContent);
+        return scoreB - scoreA;
+      });
+      // Reappend sorted elements.
+      items.forEach(item => scoreboardEl.appendChild(item));
+      for (let i = 0; i < items.length; i++) {
+        items[i].querySelector(".rank").textContent = i + 1;
+      }
+      // Animate with FLIP.
+      items.forEach(item => {
+        const initialTop = initialPositions.get(item);
+        const newTop = item.getBoundingClientRect().top;
+        const deltaY = initialTop - newTop;
+        if (deltaY !== 0) {
+          item.style.transform = `translateY(${deltaY}px)`;
+          // Force reflow.
+          item.getBoundingClientRect();
+          item.style.transition = "transform 0.75s ease-in-out";
+          item.style.transform = "translateY(0)";
+          item.addEventListener('transitionend', () => {
+            item.style.transition = '';
+          }, { once: true });
+        }
+      });
+    }
+
+    // -------------------------
+    // Animate the score update for the winning contestant.
+    function animateScoreUpdate(contestantIndex, addedPoints, deltaEl, callback) {
+      const scoreSpan = document.querySelector(`.contestant[data-index="${contestantIndex}"] .score`);
+      const startValue = contestantScores[contestantIndex];
+      const endValue = startValue + addedPoints;
+      animateValue(scoreSpan, startValue, endValue, 1000, () => {
+        contestantScores[contestantIndex] = endValue;
+        if (deltaEl) {
+          deltaEl.textContent = ''
+          //deltaEl.style.opacity = '0';
+          /*setTimeout(() => {
+            if (deltaEl.parentNode) deltaEl.parentNode.removeChild(deltaEl);
+          }, 500);*/
+        }
+        if (callback) callback();
+      });
+    }
+
+    // -------------------------
+    // Advance one vote round with staged animations.
+    function advanceRound() {
+      if (isAnimating || currentVoter >= voters.length) return;
+      isAnimating = true;
+      advanceBtn.disabled = true;
+      roundInfoEl.style.opacity = 0;
+
+      const voterName = voters[currentVoter];
+      const base = basePoints[currentPointIndex];
+      const multiplier = (currentVoter === 0) ? 4 : 1;
+      const effectivePoints = base * multiplier;
+
+      let contestantIndex = -1;
+      for (let i = 0; i < scoreMatrix.length; i++) {
+        if (scoreMatrix[i][currentVoter] === base) {
+          contestantIndex = i;
+          break;
+        }
+      }
+      if (contestantIndex === -1) {
+        alert(`Error: Could not find score ${base} in the ${voterName} column.`);
+        isAnimating = false;
+        advanceBtn.disabled = false;
+        return;
+      }
+
+      // Get the winning contestant element and its score span.
+      const allContestantEls = scoreboardEl.querySelectorAll(".contestant");
+      allContestantEls.forEach(el => {
+        if (el.dataset.index == contestantIndex) {
+          return
+        }
+        el.style.transition = "opacity 0.5s ease-in-out";
+        el.style.opacity = 0.4;
+      });
+
+      const contestantEl = document.querySelector(`.contestant[data-index="${contestantIndex}"]`);
+      const scoreSpan = contestantEl.querySelector(".score");
+      const scoreDeltaSpan = contestantEl.querySelector(".score-delta");
+
+      scoreDeltaSpan.textContent = `+${effectivePoints}`;
+
+      // Wait 2 seconds, then animate the addition.
+      setTimeout(() => {
+        animateScoreUpdate(contestantIndex, effectivePoints, scoreDeltaSpan, () => {
+          flipReorderScores();
+          setTimeout(() => {
+            currentPointIndex++;
+            if (currentPointIndex >= basePoints.length) {
+              currentPointIndex = 0;
+              currentVoter++;
+            }
+            updateRoundDisplay();
+            isAnimating = false;
+            if (currentVoter < voters.length) {
+              advanceBtn.disabled = false;
+              roundInfoEl.style.opacity = 1;
+
+              allContestantEls.forEach(el => {
+                el.style.transition = "opacity 0.5s ease-in-out";
+                el.style.opacity = 1.0;
+              });
+            }
+          }, 1000)
+        });
+      }, 2000);
+    }
+
+    // -------------------------
+    // Event listeners.
+    advanceBtn.addEventListener("click", advanceRound);
+
+    editScoresBtn.addEventListener("click", () => {
+      populateEditTable();
+      editScoresEl.style.display = "block";
+      advanceBtn.disabled = true;
+    });
+
+    // Populate the score matrix editor (rows: contestants, columns: vote rounds).
+    function populateEditTable() {
+      scoreMatrixBody.innerHTML = "";
+      contestants.forEach((contestant, rowIndex) => {
+        const tr = document.createElement("tr");
+        const tdName = document.createElement("td");
+        tdName.textContent = contestant;
+        tr.appendChild(tdName);
+        voters.forEach((voter, colIndex) => {
+          const td = document.createElement("td");
+          const select = document.createElement("select");
+          basePoints.forEach(point => {
+            const opt = document.createElement("option");
+            opt.value = point;
+            opt.textContent = point;
+            select.appendChild(opt);
+          });
+          select.value = scoreMatrix[rowIndex][colIndex];
+          td.appendChild(select);
+          tr.appendChild(td);
+        });
+        scoreMatrixBody.appendChild(tr);
+      });
+    }
+
+    // Validate that each vote round (column) is a permutation of [3,5,8,10,12].
+    function validateMatrix(matrix) {
+      const validSet = basePoints.slice().sort((a, b) => a - b).join(",");
+      for (let col = 0; col < voters.length; col++) {
+        const colArray = [];
+        for (let row = 0; row < contestants.length; row++) {
+          colArray.push(matrix[row][col]);
+        }
+        if (colArray.slice().sort((a, b) => a - b).join(",") !== validSet) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    saveScoresBtn.addEventListener("click", () => {
+      const newMatrix = [];
+      const rows = scoreMatrixBody.querySelectorAll("tr");
+      rows.forEach(tr => {
+        const cells = tr.querySelectorAll("td");
+        const rowValues = [];
+        for (let i = 1; i < cells.length; i++) {
+          const select = cells[i].querySelector("select");
+          rowValues.push(Number(select.value));
+        }
+        newMatrix.push(rowValues);
+      });
+      if (!validateMatrix(newMatrix)) {
+        alert("Invalid score matrix. Each vote round (column) must have one each of 3, 5, 8, 10, and 12.");
+        return;
+      }
+      scoreMatrix = newMatrix;
+      saveScoreMatrix();
+      editScoresEl.style.display = "none";
+      if (currentVoter < voters.length && !isAnimating) {
+        advanceBtn.disabled = false;
+      }
+    });
+
+    cancelEditBtn.addEventListener("click", () => {
+      editScoresEl.style.display = "none";
+      if (currentVoter < voters.length && !isAnimating) {
+        advanceBtn.disabled = false;
+      }
+    });
+
+    document.querySelectorAll('[data-contestant]').forEach(el => {
+      const idx = el.getAttribute('data-contestant')
+      el.textContent = contestants[idx]
+    })
+
+    document.querySelectorAll('[data-voter]').forEach(el => {
+      const idx = el.getAttribute('data-voter')
+      el.textContent = voters[idx]
+    })
+  </script>
+
+  <img src="img/sponsors.png" alt="Sponsors" style="width: 1000px; transform: translateZ(0); padding-top: 150px">
+
+  <div>
+    <button id="edit-scores-btn" style="opacity: 0; background: none; border: none; color: white" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">Bearbeiten</button>
+
+    <!-- Edit Scores Panel (hidden by default) -->
+    <div id="edit-scores" style="display:none; width: 600px; margin-left: auto; margin-right: auto; padding: 1rem; background: #3d31dd; ">
+      <table id="score-matrix" style="table-layout:fixed; font-size: 12px; background: #fff;">
+        <thead>
+          <tr>
+            <th>Contestant</th>
+            <th data-voter=0>1</th>
+            <th data-voter=1>2</th>
+            <th data-voter=2>3</th>
+            <th data-voter=3>4</th>
+            <th data-voter=4>5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be injected via JavaScript -->
+        </tbody>
+      </table>
+      <button id="save-scores-btn">Save Scores</button>
+      <button id="cancel-edit-btn">Cancel</button>
+    </div>
+  </div>
+</body>
+</html>
