@@ -330,6 +330,7 @@
       const scoreSpan = document.querySelector(`.contestant[data-index="${contestantIndex}"] .score`);
       const startValue = contestantScores[contestantIndex];
       const endValue = startValue + addedPoints;
+      const allContestantEls = scoreboardEl.querySelectorAll(".contestant");
       animateValue(scoreSpan, startValue, endValue, 1000, () => {
         contestantScores[contestantIndex] = endValue;
         if (deltaEl) {
@@ -338,6 +339,11 @@
           /*setTimeout(() => {
             if (deltaEl.parentNode) deltaEl.parentNode.removeChild(deltaEl);
           }, 500);*/
+
+          allContestantEls.forEach(el => {
+            el.style.transition = "opacity 0.5s ease-in-out";
+            el.style.opacity = 1.0;
+          });
         }
         if (callback) callback();
       });
